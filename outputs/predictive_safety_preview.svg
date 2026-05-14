@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
+  <rect width="1280" height="720" fill="#848d92"/>
+  <rect y="96" width="1280" height="624" fill="#70767a"/>
+  <rect y="132" width="1280" height="48" fill="#5d6368"/>
+  <rect y="286" width="1280" height="48" fill="#7a342f" opacity="0.9"/>
+  <rect y="500" width="1280" height="45" fill="#5b6064"/>
+  <g stroke="#d7d7cf" stroke-width="4" stroke-dasharray="46 34" opacity="0.9">
+    <line x1="0" y1="250" x2="1280" y2="250"/>
+    <line x1="0" y1="365" x2="1280" y2="365"/>
+    <line x1="0" y1="475" x2="1280" y2="475"/>
+    <line x1="120" y1="96" x2="520" y2="720"/>
+    <line x1="420" y1="96" x2="820" y2="720"/>
+    <line x1="720" y1="96" x2="1120" y2="720"/>
+  </g>
+  <text x="38" y="42" fill="#f5f5f5" font-family="Arial" font-size="22" font-weight="700">CCTV Intersection Camera 07</text>
+  <text x="38" y="72" fill="#f1f1f1" font-family="Arial" font-size="16">Detection | Tracking | Speed | TTC</text>
+  <g fill="none" stroke-width="4">
+    <rect x="80" y="510" width="215" height="62" stroke="#ff2f2f"/>
+    <rect x="315" y="155" width="34" height="84" stroke="#52d8ff"/>
+    <rect x="520" y="180" width="190" height="72" stroke="#ffae48"/>
+    <rect x="1060" y="120" width="135" height="54" stroke="#37e160"/>
+    <rect x="1040" y="392" width="168" height="58" stroke="#ff2f2f"/>
+    <rect x="1228" y="338" width="32" height="82" stroke="#52d8ff"/>
+    <line x1="188" y1="541" x2="1124" y2="421" stroke="#ff2f2f"/>
+    <line x1="332" y1="197" x2="615" y2="216" stroke="#ffd54d"/>
+    <line x1="1124" y1="421" x2="188" y2="541" stroke="#ff2f2f" opacity="0.65"/>
+  </g>
+  <g font-family="Arial" font-size="17" font-weight="700">
+    <text x="82" y="500" fill="#ff2f2f">ID:1 Car 21mph</text>
+    <text x="315" y="145" fill="#52d8ff">ID:2 Pedestrian 8mph</text>
+    <text x="520" y="170" fill="#ffae48">ID:3 Bus 14mph</text>
+    <text x="1060" y="110" fill="#37e160">ID:4 Car 16mph</text>
+    <text x="1040" y="382" fill="#ff2f2f">ID:5 Car 24mph</text>
+    <text x="958" y="472" fill="#ff2f2f">TTC 1.9s</text>
+  </g>
+  <rect x="0" y="302" width="1280" height="48" fill="#b7252e" opacity="0.78"/>
+  <text x="500" y="334" fill="#ffffff" font-family="Arial" font-size="30" font-weight="900">!! DANGER ALERT !!</text>
+</svg>

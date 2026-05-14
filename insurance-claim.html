@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AI Insurance Claim Review</title>
+    <link rel="stylesheet" href="insurance-claim.css">
+  </head>
+  <body>
+    <main class="claim-app">
+      <header class="claim-header">
+        <div>
+          <p>Auto Claims Intelligence</p>
+          <h1>AI-Assisted Collision Review</h1>
+        </div>
+        <div class="claim-actions">
+          <button id="playPause" type="button">Pause</button>
+          <button id="jumpImpact" type="button">Impact</button>
+          <button id="exportReport" type="button">Export Summary</button>
+        </div>
+      </header>
+
+      <section class="claim-grid">
+        <div class="evidence-panel">
+          <div class="video-card">
+            <video id="claimVideo" autoplay muted playsinline controls>
+              <source src="local-traffic.mp4" type="video/mp4">
+              <source src="file:///C:/Users/shrey/OneDrive/Documents/Downloads/YTDown_Shorts_The-Distracted-Box-Truck-Driver-Is-About_Media_JVPUZFy6rn4_001_720p.mp4" type="video/mp4">
+            </video>
+            <canvas id="claimOverlay" width="1280" height="720"></canvas>
+            <div id="eventBanner" class="event-banner">Potential Rear-End Collision</div>
+          </div>
+
+          <div class="timeline">
+            <div class="timeline-head">
+              <strong>Incident Timeline</strong>
+              <span id="videoTime">00:00</span>
+            </div>
+            <div class="timeline-track">
+              <button class="marker" data-time="2.5" style="left: 18%">Following distance drops</button>
+              <button class="marker danger" data-time="7.8" style="left: 55%">Impact risk</button>
+              <button class="marker" data-time="12.5" style="left: 82%">Post-impact review</button>
+            </div>
+          </div>
+        </div>
+
+        <aside class="claim-sidebar">
+          <section class="summary-card">
+            <div class="risk-score">
+              <span>Liability Confidence</span>
+              <strong>82%</strong>
+            </div>
+            <p class="case-id">Claim #AIC-2026-0513</p>
+            <h2>Preliminary Finding</h2>
+            <p>AI evidence indicates a likely rear-end event with insufficient stopping distance before impact.</p>
+          </section>
+
+          <section class="details-card">
+            <h2>Claim Details</h2>
+            <dl>
+              <div>
+                <dt>Policyholder</dt>
+                <dd>Pending review</dd>
+              </div>
+              <div>
+                <dt>Loss Type</dt>
+                <dd>Auto collision</dd>
+              </div>
+              <div>
+                <dt>Incident Location</dt>
+                <dd>Roadway video evidence</dd>
+              </div>
+              <div>
+                <dt>Status</dt>
+                <dd>Evidence triage</dd>
+              </div>
+            </dl>
+          </section>
+
+          <section class="details-card">
+            <h2>AI Evidence</h2>
+            <ul class="evidence-list">
+              <li><span class="dot danger"></span><strong>Closest TTC:</strong> 1.4s near impact</li>
+              <li><span class="dot warn"></span><strong>Following gap:</strong> below safe threshold</li>
+              <li><span class="dot"></span><strong>Detected class:</strong> truck / car</li>
+              <li><span class="dot"></span><strong>Motion pattern:</strong> closing trajectory</li>
+            </ul>
+          </section>
+
+          <section class="estimate-card">
+            <h2>Reserve Estimate</h2>
+            <div class="estimate-row">
+              <span>Vehicle damage</span>
+              <strong>$4,800</strong>
+            </div>
+            <div class="estimate-row">
+              <span>Rental / loss of use</span>
+              <strong>$640</strong>
+            </div>
+            <div class="estimate-row total">
+              <span>Suggested reserve</span>
+              <strong>$5,440</strong>
+            </div>
+          </section>
+        </aside>
+      </section>
+
+      <section class="review-band">
+        <article>
+          <span>Detected Objects</span>
+          <strong>Truck, car, traffic context</strong>
+        </article>
+        <article>
+          <span>Distance Logic</span>
+          <strong>Box-size distance estimate</strong>
+        </article>
+        <article>
+          <span>Decision Support</span>
+          <strong>Adjuster review required</strong>
+        </article>
+      </section>
+    </main>
+
+    <script src="insurance-claim.js"></script>
+  </body>
+</html>

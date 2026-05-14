@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Predictive AI Safety Vision Demo</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="shell">
+      <section class="topbar" aria-label="Simulation controls">
+        <div>
+          <p class="eyebrow">Computer Vision Safety System</p>
+          <h1>Predictive Collision Intelligence</h1>
+        </div>
+        <div class="controls">
+          <button id="pauseBtn" type="button" aria-pressed="false">Pause</button>
+          <button id="resetBtn" type="button">Reset</button>
+          <label class="toggle">
+            <input id="nightToggle" type="checkbox">
+            <span>Night mode</span>
+          </label>
+          <label class="range">
+            <span>Traffic</span>
+            <input id="densityRange" type="range" min="3" max="8" value="6">
+          </label>
+        </div>
+      </section>
+
+      <section class="workspace" aria-label="Predictive safety dashboard">
+        <div class="scene-panel">
+          <canvas id="scene" width="1280" height="720" aria-label="Road simulation canvas"></canvas>
+          <div id="dangerBanner" class="danger-banner" hidden>DANGER ALERT</div>
+        </div>
+
+        <aside class="inspector" aria-label="System telemetry">
+          <div class="status-card">
+            <span class="status-dot" id="riskDot"></span>
+            <div>
+              <p class="label">System Risk</p>
+              <strong id="riskLabel">Monitoring</strong>
+            </div>
+          </div>
+
+          <div class="metric-grid">
+            <div>
+              <p class="label">Objects</p>
+              <strong id="objectCount">0</strong>
+            </div>
+            <div>
+              <p class="label">Closest TTC</p>
+              <strong id="ttcValue">--</strong>
+            </div>
+            <div>
+              <p class="label">Avg Speed</p>
+              <strong id="speedValue">--</strong>
+            </div>
+            <div>
+              <p class="label">Warnings</p>
+              <strong id="warningCount">0</strong>
+            </div>
+          </div>
+
+          <div>
+            <div class="panel-heading">
+              <h2>Tracked Objects</h2>
+              <span id="frameLabel">Frame 0000</span>
+            </div>
+            <div id="tracks" class="tracks"></div>
+          </div>
+
+          <div class="pipeline">
+            <h2>Vision Pipeline</h2>
+            <ol>
+              <li><span>1</span>Detect and classify road users</li>
+              <li><span>2</span>Track object motion frame-by-frame</li>
+              <li><span>3</span>Estimate speed and trajectory</li>
+              <li><span>4</span>Predict TTC and raise proximity alerts</li>
+            </ol>
+          </div>
+        </aside>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>

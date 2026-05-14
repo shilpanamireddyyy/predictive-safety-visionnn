@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Real Video Predictive Safety Demo</title>
+    <link rel="stylesheet" href="real-video.css">
+  </head>
+  <body>
+    <main class="stage">
+      <section class="header">
+        <div>
+          <p>Real Vehicle Footage</p>
+          <h1>Predictive AI Collision Warning System</h1>
+        </div>
+        <div class="actions">
+          <button id="playPause" type="button">Pause</button>
+          <button id="restart" type="button">Restart</button>
+          <button id="startDetectorBtn" type="button">Start AI</button>
+          <button id="calibrateBtn" type="button" aria-pressed="false">Calibrate</button>
+          <label>
+            <input id="alerts" type="checkbox" checked>
+            Alerts
+          </label>
+        </div>
+      </section>
+
+      <section class="video-shell" aria-label="Real traffic video with predictive safety overlay">
+        <video
+          id="trafficVideo"
+          autoplay
+          muted
+          playsinline
+          poster="outputs/predictive_safety_preview.svg"
+        >
+          <source src="local-traffic.mp4" type="video/mp4">
+        </video>
+        <canvas id="overlay" width="1280" height="720"></canvas>
+        <div id="danger" class="danger">!! DANGER ALERT !!</div>
+        <div id="videoStatus" class="video-status">Loading real traffic video...</div>
+      </section>
+
+      <section class="telemetry" aria-label="Safety system telemetry">
+        <article>
+          <span>Detected</span>
+          <strong id="detected">0</strong>
+        </article>
+        <article>
+          <span>Closest TTC</span>
+          <strong id="ttc">--</strong>
+        </article>
+        <article>
+          <span>Max Speed</span>
+          <strong id="speed">--</strong>
+        </article>
+        <article>
+          <span>Pipeline</span>
+          <strong>Detect -> Track -> Predict</strong>
+        </article>
+      </section>
+
+      <section id="calibrationPanel" class="calibration" hidden aria-label="Overlay calibration controls">
+        <label>
+          Alert start
+          <input id="alertStartInput" type="range" min="0" max="30" step="0.1" value="4.2">
+          <span id="alertStartLabel">4.2s</span>
+        </label>
+        <label>
+          Alert end
+          <input id="alertEndInput" type="range" min="0" max="30" step="0.1" value="13.2">
+          <span id="alertEndLabel">13.2s</span>
+        </label>
+        <div class="calibration-buttons">
+          <button id="setAlertStartBtn" type="button">Set start now</button>
+          <button id="setAlertEndBtn" type="button">Set end now</button>
+        </div>
+        <label>
+          Overlay X
+          <input id="overlayXInput" type="range" min="-35" max="35" step="1" value="0">
+          <span id="overlayXLabel">0%</span>
+        </label>
+        <label>
+          Overlay Y
+          <input id="overlayYInput" type="range" min="-35" max="35" step="1" value="0">
+          <span id="overlayYLabel">0%</span>
+        </label>
+        <label>
+          Overlay scale
+          <input id="overlayScaleInput" type="range" min="70" max="135" step="1" value="100">
+          <span id="overlayScaleLabel">100%</span>
+        </label>
+      </section>
+
+      <p class="credit">Video source: local MP4 from Downloads.</p>
+    </main>
+
+    <script src="real-video-overlay.js"></script>
+  </body>
+</html>
