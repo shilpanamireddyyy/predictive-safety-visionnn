@@ -1,6 +1,7 @@
 __pycache__/
 *.pyc
 .ipynb_checkpoints/
+.env
 outputs/*.avi
 outputs/*.mov
 *.zip

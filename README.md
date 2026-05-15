@@ -80,6 +80,37 @@ The annotated output is saved to:
 outputs/yolo_distance_ttc_output.mp4
 ```
 
+## Option 5: Emergency Collision Agent
+
+This layer watches the YOLO detections for sustained danger signals, saves an incident snapshot/report, and can notify a configured family contact. By default it runs in dry-run mode, so it prints the emergency workflow without placing real calls.
+
+Install the agent dependencies:
+
+```bash
+pip install -r requirements-agent.txt
+```
+
+Run the agent on a traffic video:
+
+```bash
+python emergency_collision_agent.py --source local-traffic.mp4
+```
+
+The output video and incident files are saved to:
+
+```text
+outputs/emergency_agent_output.mp4
+outputs/incidents/
+```
+
+To connect real family notifications, copy `.env.example` to `.env`, add Twilio credentials and phone numbers, then run:
+
+```bash
+python emergency_collision_agent.py --source local-traffic.mp4 --live-calls
+```
+
+For safety, the project does not automatically call real emergency numbers such as 911 in normal demo mode. Use a family number, test number, or approved emergency contact workflow for demonstrations.
+
 ## Project Files
 
 - `index.html` contains the dashboard layout.
@@ -90,6 +121,8 @@ outputs/yolo_distance_ttc_output.mp4
 - `requirements-cv.txt` lists the Python dependencies for the OpenCV version.
 - `yolo_distance_ttc.py` runs real YOLO detection/tracking and estimates distance, speed, and TTC.
 - `requirements-yolo.txt` lists the YOLO pipeline dependencies.
+- `emergency_collision_agent.py` adds incident detection, reporting, and optional family-contact notifications.
+- `requirements-agent.txt` lists the emergency-agent dependencies.
 
 ## How TTC Is Calculated
 
